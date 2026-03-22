@@ -118,3 +118,19 @@ nav {
 #synchrotron-map svg {
   min-height: 500px;
 }
+
+/* Force synchrotron map to be large */
+#synchrotron-map {
+  max-width: 100% !important;
+  min-height: 600px;
+  padding: 2rem 0;
+}
+
+#synchrotron-map img {
+  min-height: 600px;
+  object-fit: cover;
+}
+
+#synchrotron-map svg {
+  min-height: 600px;
+}

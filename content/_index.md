@@ -52,11 +52,12 @@ sections:
     id: papers
     content:
       title: Publications
+      subtitle: 'Peer-reviewed & Conference Proceedings'
       filters:
         folders:
           - publications
     design:
-      view: citation
+      view: card
   - block: collection
     id: talks
     content:
