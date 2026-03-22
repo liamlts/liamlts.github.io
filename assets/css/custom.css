@@ -200,3 +200,42 @@ main article > .row > .col-12 > figure:first-child,
 .article-header .featured-image-wrapper {
   display: none !important;
 }
+
+/* Education entry backgrounds with school images */
+.hb-section:first-child .group {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.hb-section:first-child .group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hb-section:first-child .group:hover::before {
+  opacity: 0.2;
+}
+
+.hb-section:first-child .group > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* First education entry = Northeastern */
+.hb-section:first-child .group:first-child::before {
+  background-image: url('/images/northeastern.jpg');
+}
+
+/* Second education entry = Binghamton */
+.hb-section:first-child .group:nth-child(2)::before {
+  background-image: url('/images/binghamton.jpg');
+}
