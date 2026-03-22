@@ -239,3 +239,19 @@ main article > .row > .col-12 > figure:first-child,
 .hb-section:first-child .group:nth-child(2)::before {
   background-image: url('/images/binghamton.jpg');
 }
+
+/* Clean up bio section proportions */
+.hb-section:first-child {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+/* Make education cards more compact */
+.hb-section:first-child .group {
+  padding: 0.75rem;
+}
+
+/* Tighten the date display in education */
+.hb-section:first-child .text-sm {
+  font-size: 0.8rem;
+}

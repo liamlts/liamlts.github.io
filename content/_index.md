@@ -21,9 +21,9 @@ sections:
         gradient_mesh:
           enable: false
       name:
-        size: lg
+        size: md
       avatar:
-        size: large
+        size: medium
         shape: rounded
   - block: collection
     id: projects
