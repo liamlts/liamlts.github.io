@@ -27,7 +27,7 @@ sections:
         size: lg
       avatar:
         size: large
-        shape: circle
+        shape: rounded
   - block: collection
     id: projects
     content:

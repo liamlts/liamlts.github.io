@@ -1,0 +1,101 @@
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover effects */
+.card,
+.article-grid-item,
+[class*="collection"] article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.article-grid-item:hover,
+[class*="collection"] article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Avatar hover */
+.avatar img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 0.75rem !important;
+}
+
+.avatar img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Navbar link hover underline effect */
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-primary-500, #10b981);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Scroll fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hb-section {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.hb-section:nth-child(2) { animation-delay: 0.1s; }
+.hb-section:nth-child(3) { animation-delay: 0.2s; }
+.hb-section:nth-child(4) { animation-delay: 0.3s; }
+
+/* Button styling */
+.btn-primary,
+a[href*="resume"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+a[href*="resume"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Section titles */
+.hb-section-heading {
+  position: relative;
+}
+
+/* Subtle divider between sections */
+.hb-section + .hb-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Publication links hover */
+.btn-links a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-links a:hover {
+  transform: translateY(-1px);
+}

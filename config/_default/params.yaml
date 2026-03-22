@@ -37,9 +37,9 @@ hugoblox:
     pack: "default"
     # Optional: Override theme pack colors
     colors:
-      primary: "indigo"                       # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
-      secondary: "slate"
-      neutral: "zinc"                       # Affects gray utilities (text-gray-*, bg-gray-*)
+      primary: "emerald"                       # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
+      secondary: "zinc"
+      neutral: "neutral"                       # Affects gray utilities (text-gray-*, bg-gray-*)
     # Optional: Mode-specific color overrides
     colors_light: {}
     colors_dark: {}
@@ -74,7 +74,7 @@ hugoblox:
     # Spacing density: 'compact', 'comfortable', or 'spacious'
     spacing: "comfortable"
     # Avatar shape in author profiles
-    avatar_shape: circle                # circle | square | rounded
+    avatar_shape: rounded                # circle | square | rounded
 
   # ────────────────────────────────────────────────────────────────────────────
   # HEADER
