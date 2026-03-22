@@ -39,6 +39,22 @@ sections:
     design:
       view: article-grid
       columns: 2
+  - block: markdown
+    id: facilities
+    content:
+      title: 'Synchrotron & Facility Experience'
+      subtitle: 'Lead proposer on successful beamtime proposals across DOE national and international user facilities'
+      text: |-
+        **DOE National User Facilities**
+        NSLS-II, Brookhaven National Laboratory (2-ID, SIX) · Advanced Photon Source, Argonne National Laboratory (Sector 27) · Advanced Light Source, Lawrence Berkeley National Laboratory (4.0.2)
+
+        **International Synchrotrons**
+        ESRF, France (ID32) · Diamond Light Source, UK (I21, I10) · SOLEIL, France (DEIMOS, SEXTANTS) · MAX IV, Sweden (VERITAS) · CHESS, Cornell (PIPOXS, QM2) · Canadian Light Source (BXDS)
+
+        **Free-Electron Laser & THz Facilities**
+        TELBE, Helmholtz-Zentrum Dresden-Rossendorf · TeraFERMI, Elettra Sincrotrone Trieste
+    design:
+      columns: '1'
   - block: collection
     id: papers
     content:

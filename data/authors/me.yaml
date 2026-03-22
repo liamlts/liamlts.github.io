@@ -16,12 +16,12 @@ bio: |
   I am a third-year PhD candidate at Northeastern University's Quantum Matter
   and Sensing Institute, working in the DeLTA Lab under Prof. Alberto de la Torre.
   My research focuses on quantum materials — particularly altermagnetism — using
-  advanced X-ray spectroscopies (RIXS, XMCD, EXAFS) at international synchrotron and free-electron laser
-  facilities. 
+  advanced X-ray spectroscopies (RIXS, XMCD, EXAFS) at international synchrotron
+  and free-electron laser facilities.
 
 affiliations:
   - name: Northeastern University — DeLTA Lab
-    url: ""
+    url: "https://www.deltalabnu.org/"
   - name: Quantum Matter and Sensing Institute — Northeastern University
     url: ""
 
@@ -36,7 +36,10 @@ links:
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=bRe3ABIAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/my-orcid?orcid=0000-0001-7927-4300
+    url: https://orcid.org/0000-0001-7927-4300
+  - icon: custom/blog
+    url: https://condensedmattercorner.wordpress.com/
+    label: Blog
 
 interests:
   - Altermagnetism
@@ -44,7 +47,8 @@ interests:
   - X-ray Spectroscopy (RIXS, XMCD, EXAFS)
   - Synchrotron Science
   - Van der Waals Magnets
-  - Magnetocaloric Materials
+  - Superconductivity
+  - Nonlinear & Ultrafast Dynamics
 
 education:
   - degree: PhD in Condensed Matter Physics
@@ -53,48 +57,70 @@ education:
     summary: |
       Quantum Matter and Sensing Institute, DeLTA Lab. Research on altermagnetism
       and quantum materials using synchrotron-based spectroscopies. PI on 15+
-      experimental campaigns at ESRF, Diamond, SOLEIL, MAX IV, and NSLS-II.
+      experimental campaigns at ESRF, Diamond, SOLEIL, MAX IV, NSLS-II, APS, ALS,
+      CHESS, CLS, TELBE, and TeraFERMI.
   - degree: BS in Mathematical Physics & Mathematics, Summa Cum Laude
     institution: Binghamton University (SUNY)
     start: 2019-09-01
     end: 2023-05-31
     summary: |
-      Phi Beta Kappa. Dual degrees with honors in Mathematical Physics and Mathematics.
+      Phi Beta Kappa, Pi Mu Epsilon. Dual degrees with departmental honors
+      in Mathematical Physics and Mathematics. GPA 3.84/4.0.
 
 experience:
   - role: Graduate Research Assistant — DeLTA Lab
     org: Northeastern University
     start: 2023-09-01
     summary: |
-      Principal Investigator managing over 15 beamtime allocations across
-      international synchrotron facilities. Research on altermagnetism in MnTe
-      and CrSb, van der Waals magnets, and magnetocaloric materials.
-  - role: Teaching Assistant — Electronics & Physics
+      Lead proposer on beamtime proposals at DOE national user facilities and
+      international synchrotrons. Research on altermagnetism in MnTe and CrSb,
+      van der Waals magnets, nickelate superconductors, and frustrated magnets.
+      Built rotational-anisotropy SHG and transient absorption systems. Developed
+      ML models for crystal field parameter extraction from XAS spectra.
+  - role: Teaching Assistant
     org: Northeastern University
     start: 2023-09-01
     summary: |
-      TA for undergraduate electronics and physics laboratory courses.
-      Grading, mentoring undergraduate researchers, and developing course materials.
+      TA for Electronics Lab, E&M II, Statistical Thermodynamics, Physics for
+      Life Sciences, and Physics for Engineers. Mentored 12 undergraduates to
+      co-authored publications at ASEE and FYEE 2026.
+  - role: Undergraduate Research Assistant
+    org: Binghamton University
+    start: 2021-09-01
+    end: 2023-05-31
+    summary: |
+      Phase retrieval algorithms for phase contrast imaging. DFT calculations
+      using VASP and Quantum ESPRESSO.
 
 skills:
-  - name: Experimental Techniques
+  - name: Synchrotron Techniques
     items:
       - label: RIXS
         level: 5
-      - label: XMCD
+      - label: XMCD / XAS
         level: 5
       - label: EXAFS
         level: 5
-      - label: SHG (Second Harmonic Generation)
+      - label: XRD
+        level: 4
+  - name: Optical & Ultrafast
+    items:
+      - label: RA-SHG
+        level: 5
+      - label: THz Spectroscopy
+        level: 4
+      - label: Transient Absorption
         level: 4
   - name: Computational
     items:
-      - label: Python
+      - label: Python (NumPy, SciPy, PyTorch)
         level: 5
+      - label: Multiplet Theory (EDRIXS, Quanty)
+        level: 5
+      - label: DFT (VASP, QE)
+        level: 4
       - label: Machine Learning
         level: 4
-      - label: Data Analysis & Visualization
-        level: 5
 
 languages:
   - name: English
@@ -107,11 +133,21 @@ languages:
 awards:
   - title: Luigi Morelli Research Fellowship
     awarder: Northeastern University
-    date: "Summer 2025"
-    summary: Awarded to outstanding incoming PhD students in the College of Science.
-    icon: hero/academic-cap 
-  - title: Magna Cum Laude & Phi Beta Kappa
+    date: "2024-06-01"
+    summary: Competitive fellowship awarded to outstanding PhD students in the College of Science.
+    icon: hero/academic-cap
+  - title: Phi Beta Kappa
     awarder: Binghamton University (SUNY)
-    date: "2023"
-    summary: Graduated with latin and departmental honors with dual degrees in Mathematical Physics and Mathematics.
+    date: "2023-05-01"
+    summary: Inducted into the nation's oldest academic honor society.
+    icon: hero/academic-cap
+  - title: Pi Mu Epsilon
+    awarder: Binghamton University (SUNY)
+    date: "2023-05-01"
+    summary: National mathematics honor society.
+    icon: hero/academic-cap
+  - title: Summa Cum Laude with Departmental Honors
+    awarder: Binghamton University (SUNY)
+    date: "2023-05-01"
+    summary: Graduated with highest latin honors and departmental honors in both Physics and Mathematics.
     icon: hero/academic-cap
