@@ -11,9 +11,12 @@ main:
   - name: Talks
     url: /#talks
     weight: 30
-  - name: Blog
-    url: blog/
+  - name: Teaching
+    url: teaching/
     weight: 35
+  - name: Blog
+    url: https://condensedmattercorner.wordpress.com/
+    weight: 38
   - name: CV
     url: uploads/resume.pdf
     weight: 40

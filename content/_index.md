@@ -43,7 +43,7 @@ sections:
     id: facilities
     content:
       title: 'Synchrotron & Facility Experience'
-      subtitle: 'Lead proposer on successful beamtime proposals across DOE national and international user facilities'
+      subtitle: 'Lead proposer on beamtime proposals across DOE national and international user facilities'
       text: |-
         **DOE National User Facilities**
         NSLS-II, Brookhaven National Laboratory (2-ID, SIX) · Advanced Photon Source, Argonne National Laboratory (Sector 27) · Advanced Light Source, Lawrence Berkeley National Laboratory (4.0.2)
@@ -71,6 +71,15 @@ sections:
       filters:
         folders:
           - events
+    design:
+      view: card
+  - block: collection
+    id: teaching
+    content:
+      title: Teaching
+      filters:
+        folders:
+          - teaching
     design:
       view: card
 ---
