@@ -2,7 +2,7 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Liam Schmidt
+  display: Liam T. Schmidt
   given: Liam
   family: Schmidt
   alternate: ''
@@ -10,7 +10,7 @@ name:
   pronouns: he/him
 postnominals: []
 status:
-  icon: "⚛️"
+  icon: "🔬"
 role: PhD Candidate in Condensed Matter Physics
 bio: |
   I am a third-year PhD candidate at Northeastern University's Quantum Matter
@@ -22,7 +22,7 @@ bio: |
 affiliations:
   - name: Northeastern University — DeLTA Lab
     url: "https://www.deltalabnu.org/"
-  - name: Quantum Matter and Sensing Institute — Northeastern University
+  - name: Quantum Matter and Sensing Institute
     url: ""
 
 links:
