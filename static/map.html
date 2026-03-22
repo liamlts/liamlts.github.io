@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: transparent; overflow: hidden; }
+  #map-wrap { width: 100%; height: 100vh; position: relative; }
+  #map-wrap img { width: 100%; height: 100%; object-fit: contain; }
+  #map-wrap svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  #tooltip {
+    display: none; position: absolute;
+    background: rgba(22,22,22,0.97); border: 1px solid #22d3ee;
+    border-radius: 8px; padding: 14px 18px; color: #fafafa;
+    font-family: system-ui, sans-serif; font-size: 14px;
+    max-width: 340px; pointer-events: none; z-index: 10;
+    backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .dot { cursor: pointer; transition: all 0.2s ease; }
+  .dot:hover { filter: drop-shadow(0 0 10px #22d3ee); }
+</style>
+</head>
+<body>
+<div id="map-wrap">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/BlankMap-World-Flattened.svg/1280px-BlankMap-World-Flattened.svg.png" 
+     style="filter: brightness(0.2) saturate(0.2) sepia(0.1) hue-rotate(160deg);" alt="World map"/>
+<svg viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <g stroke="#22d3ee" stroke-width="0.6" stroke-opacity="0.12" stroke-dasharray="6,4" fill="none">
+    <path d="M295,235 Q400,180 530,215"/>
+    <path d="M295,235 Q390,170 505,198"/>
+    <path d="M295,235 Q400,175 520,207"/>
+    <path d="M295,235 Q410,160 540,185"/>
+    <path d="M295,235 Q420,185 555,218"/>
+    <path d="M295,235 Q420,170 545,200"/>
+    <line x1="295" y1="235" x2="265" y2="232"/>
+    <line x1="295" y1="235" x2="155" y2="232"/>
+    <line x1="295" y1="235" x2="285" y2="228"/>
+    <line x1="295" y1="235" x2="230" y2="178"/>
+  </g>
+
+  <!-- Home: Boston -->
+  <circle cx="295" cy="235" r="16" fill="url(#g)"/><circle cx="295" cy="235" r="5" fill="#fff" class="dot" data-f="home"/>
+  <!-- NSLS-II -->
+  <circle cx="288" cy="240" r="12" fill="url(#g)"/><circle cx="288" cy="240" r="4" fill="#22d3ee" class="dot" data-f="nsls2"/>
+  <!-- APS -->
+  <circle cx="253" cy="232" r="12" fill="url(#g)"/><circle cx="253" cy="232" r="4" fill="#22d3ee" class="dot" data-f="aps"/>
+  <!-- ALS -->
+  <circle cx="148" cy="243" r="12" fill="url(#g)"/><circle cx="148" cy="243" r="4" fill="#22d3ee" class="dot" data-f="als"/>
+  <!-- CHESS -->
+  <circle cx="283" cy="230" r="12" fill="url(#g)"/><circle cx="283" cy="230" r="4" fill="#22d3ee" class="dot" data-f="chess"/>
+  <!-- CLS -->
+  <circle cx="222" cy="178" r="12" fill="url(#g)"/><circle cx="222" cy="178" r="4" fill="#22d3ee" class="dot" data-f="cls"/>
+  <!-- ESRF -->
+  <circle cx="531" cy="218" r="12" fill="url(#g)"/><circle cx="531" cy="218" r="4" fill="#22d3ee" class="dot" data-f="esrf"/>
+  <!-- Diamond -->
+  <circle cx="507" cy="200" r="12" fill="url(#g)"/><circle cx="507" cy="200" r="4" fill="#22d3ee" class="dot" data-f="diamond"/>
+  <!-- SOLEIL -->
+  <circle cx="521" cy="210" r="12" fill="url(#g)"/><circle cx="521" cy="210" r="4" fill="#22d3ee" class="dot" data-f="soleil"/>
+  <!-- MAX IV -->
+  <circle cx="541" cy="188" r="12" fill="url(#g)"/><circle cx="541" cy="188" r="4" fill="#22d3ee" class="dot" data-f="maxiv"/>
+  <!-- Elettra -->
+  <circle cx="548" cy="222" r="12" fill="url(#g)"/><circle cx="548" cy="222" r="4" fill="#22d3ee" class="dot" data-f="elettra"/>
+  <!-- TELBE -->
+  <circle cx="543" cy="204" r="12" fill="url(#g)"/><circle cx="543" cy="204" r="4" fill="#22d3ee" class="dot" data-f="telbe"/>
+</svg>
+<div id="tooltip"></div>
+</div>
+
+<script>
+const F = {
+  home: ["Northeastern University", "Boston, MA", "Home — DeLTA Lab, Quantum Matter and Sensing Institute"],
+  nsls2: ["NSLS-II", "Brookhaven National Laboratory, NY", "2-ID, SIX · RIXS on altermagnets, vdW magnets, nickelates, frustrated magnets"],
+  aps: ["Advanced Photon Source", "Argonne National Laboratory, IL", "Sector 27 · tr-RIXS on Kitaev spin liquids"],
+  als: ["Advanced Light Source", "LBNL, Berkeley, CA", "Beamline 4.0.2 · XMCD on altermagnetic thin films"],
+  chess: ["CHESS", "Cornell University, NY", "PIPOXS, QM2 · XRD on quantum materials"],
+  cls: ["Canadian Light Source", "Saskatoon, Canada", "BXDS · X-ray diffraction"],
+  esrf: ["ESRF", "Grenoble, France", "ID32 · High-resolution RIXS on altermagnets and vdW magnets"],
+  diamond: ["Diamond Light Source", "Oxfordshire, UK", "I21, I10 · RIXS and XMCD on MnTe, CrSb, Cr-based vdW magnets"],
+  soleil: ["SOLEIL", "Saint-Aubin, France", "DEIMOS, SEXTANTS · XMCD and RIXS on altermagnetic and vdW systems"],
+  maxiv: ["MAX IV", "Lund, Sweden", "VERITAS · Soft X-ray RIXS on magnetic thin films"],
+  elettra: ["Elettra / TeraFERMI", "Trieste, Italy", "TeraFERMI FEL · Time-resolved THz absorption spectroscopy"],
+  telbe: ["TELBE", "HZDR, Dresden, Germany", "THz pump-probe and Higgs spectroscopy on superconductors"]
+};
+const tt = document.getElementById('tooltip');
+document.querySelectorAll('.dot').forEach(d => {
+  d.addEventListener('mouseenter', function(e) {
+    const f = F[this.dataset.f]; if(!f) return;
+    tt.innerHTML = '<strong style="color:#22d3ee;font-size:15px;">' + f[0] + '</strong><br><span style="color:#a1a1aa;font-size:12px;">' + f[1] + '</span><br><span style="margin-top:6px;display:inline-block;line-height:1.4;">' + f[2] + '</span>';
+    tt.style.display = 'block';
+    const r = document.getElementById('map-wrap').getBoundingClientRect();
+    const dr = this.getBoundingClientRect();
+    let l = dr.left - r.left + 18, t = dr.top - r.top - 10;
+    if (l + 340 > r.width) l = l - 360;
+    if (t < 0) t = 10;
+    tt.style.left = l + 'px'; tt.style.top = t + 'px';
+  });
+  d.addEventListener('mouseleave', () => { tt.style.display = 'none'; });
+  d.addEventListener('mouseenter', function() { this.setAttribute('r','6'); });
+  d.addEventListener('mouseleave', function() { this.setAttribute('r','4'); });
+});
+</script>
+</body>
+</html>
