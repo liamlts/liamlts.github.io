@@ -28,16 +28,17 @@ sections:
       avatar:
         size: large
         shape: circle
-  - block: markdown
+  - block: collection
+    id: projects
     content:
-      title: 'Research'
+      title: Research
       subtitle: ''
-      text: |-
-        My research centers on quantum materials characterization using synchrotron-based X-ray spectroscopies. I investigate altermagnetism, van der Waals magnets, frustrated magnetic systems, and magnetocaloric materials at major international facilities including ESRF, Diamond Light Source, SOLEIL, MAX IV, and NSLS-II.
-
-        As Principal Investigator, I manage over $1M in beamtime allocations across 15+ experimental campaigns. I also pursue a JD at Hofstra Law School focused on energy and environmental policy, where I serve as President of the Energy & Environmental Law Society.
+      filters:
+        folders:
+          - projects
     design:
-      columns: '1'
+      view: article-grid
+      columns: 2
   - block: collection
     id: papers
     content:

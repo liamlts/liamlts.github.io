@@ -2,6 +2,9 @@ main:
   - name: About
     url: /
     weight: 10
+  - name: Research
+    url: /#projects
+    weight: 15
   - name: Publications
     url: /#papers
     weight: 20
