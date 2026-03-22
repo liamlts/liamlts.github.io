@@ -134,3 +134,61 @@ nav {
 #synchrotron-map svg {
   min-height: 600px;
 }
+
+/* Education cards with school backgrounds */
+.hb-section li:has(.institution) {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Target education items by institution text */
+div[class*="education"] li,
+.resume-education li,
+ul.list-disc li {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  transition: all 0.4s ease;
+}
+
+/* Generic education background overlay approach */
+.hb-section:first-child li {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.hb-section:first-child li::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hb-section:first-child li:hover::before {
+  opacity: 0.25;
+}
+
+.hb-section:first-child li > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Northeastern - first education entry */
+.hb-section:first-child li:nth-child(1)::before {
+  background-image: url('/images/northeastern.jpg');
+}
+
+/* Binghamton - second education entry */
+.hb-section:first-child li:nth-child(2)::before {
+  background-image: url('/images/binghamton.jpg');
+}
