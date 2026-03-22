@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liam T. Schmidt — Condensed Matter Physics</title>
+  <meta name="description" content="Liam Schmidt — PhD candidate researching quantum materials and altermagnetism at Northeastern University.">
+  <meta name="author" content="Liam T. Schmidt">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Liam T. Schmidt">
+  <meta property="og:description" content="PhD candidate researching quantum materials and altermagnetism at Northeastern University.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://liamlts.github.io/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scroll-progress" style="width: 0%;"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     NAVBAR
+     ════════════════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#teaching">Teaching</a>
+    <a href="experience.html">CV</a>
+    <a href="uploads/resume.pdf" target="_blank">Resume ↓</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO / BIO
+     ════════════════════════════════════════════════════════════ -->
+<section class="hero" id="about">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-text reveal">
+        <h1>Liam T. <span class="gradient-text">Schmidt</span></h1>
+        <div class="hero-role"><span class="typed-text typing-cursor" id="typed-role"></span></div>
+
+        <div class="hero-affiliations">
+          <a href="https://www.deltalabnu.org/" target="_blank" rel="noopener" class="affiliation-link">DeLTA Lab</a>
+          <a href="https://quantum.northeastern.edu/" target="_blank" rel="noopener" class="affiliation-link">Quantum Matter and Sensing Institute</a>
+        </div>
+
+        <p class="hero-bio">
+          I am a third-year PhD candidate at Northeastern University's Quantum Matter
+          and Sensing Institute, working in the DeLTA Lab under Prof.&nbsp;Alberto de la Torre.
+          My research focuses on quantum materials — particularly altermagnetism — using
+          advanced X-ray spectroscopies (RIXS, XMCD, EXAFS) at international synchrotron
+          and free-electron laser facilities.
+        </p>
+
+        <div class="hero-links">
+          <a href="mailto:schmidt.lia@northeastern.edu" data-tip="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://github.com/liamlts" target="_blank" rel="noopener" data-tip="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/liam-schmidt-321839179/" target="_blank" rel="noopener" data-tip="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=bRe3ABIAAAAJ&hl=en" target="_blank" rel="noopener" data-tip="Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+          </a>
+          <a href="https://orcid.org/0000-0001-7927-4300" target="_blank" rel="noopener" data-tip="ORCID">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378a.87.87 0 110 1.74.87.87 0 010-1.74zm-.78 3.451h1.56v11.561H6.59V7.829zm3.868 0h4.215c3.726 0 5.371 2.547 5.371 5.746 0 3.373-2.035 5.815-5.544 5.815h-4.042V7.829zm1.56 1.387v8.787h2.482c2.825 0 3.932-1.908 3.932-4.424 0-2.42-1.237-4.363-3.873-4.363h-2.541z"/></svg>
+          </a>
+          <a href="https://condensedmattercorner.wordpress.com/" target="_blank" rel="noopener" data-tip="Blog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Education -->
+        <div class="section-label">Education</div>
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="bg-img" style="background-image: url('images/northeastern.jpg');"></div>
+            <div class="edu-degree">PhD in Condensed Matter Physics</div>
+            <div class="edu-school">Northeastern University</div>
+            <div class="edu-date">2023 — Present</div>
+          </div>
+          <div class="edu-card">
+            <div class="bg-img" style="background-image: url('images/binghamton.jpg');"></div>
+            <div class="edu-degree">BS in Mathematical Physics &amp; Mathematics, <em>Summa Cum Laude</em></div>
+            <div class="edu-school">Binghamton University (SUNY)</div>
+            <div class="edu-date">2019 — 2023</div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="section-label" style="margin-top: 1.5rem;">Interests</div>
+        <ul class="interests-list">
+          <li>Altermagnetism</li>
+          <li>Quantum Materials</li>
+          <li>X-ray Spectroscopy</li>
+          <li>Synchrotron Science</li>
+          <li>Van der Waals &amp; Frustrated Magnets</li>
+          <li>Superconductivity</li>
+          <li>Ultrafast Dynamics</li>
+        </ul>
+      </div>
+
+      <div class="avatar-wrapper reveal reveal-delay-2">
+        <img src="media/avatar.jpg" alt="Liam T. Schmidt">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     RESEARCH
+     ════════════════════════════════════════════════════════════ -->
+<section id="research">
+  <div class="container">
+    <div class="section-label reveal">Research Areas</div>
+    <div class="section-title reveal">Research</div>
+    <div class="section-subtitle reveal">Probing and engineering quantum materials with synchrotron light and ultrafast spectroscopies.</div>
+
+    <div class="card-grid">
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/projects/altermagnetism.jpg" alt="Altermagnetism" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3><a href="projects/altermagnetism.html">Altermagnetism</a></h3>
+          <p>Probing the magnetic and electronic structure of altermagnets using RIXS, XMCD, and EXAFS at synchrotron facilities worldwide. With their potential to transform spintronics, I am looking for ways to control altermagnetism and its excitations.</p>
+          <div class="card-tags">
+            <span>Altermagnetism</span>
+            <span>RIXS</span>
+            <span>XMCD</span>
+            <span>Spintronics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="card-img-wrap">
+          <img src="images/projects/strain-engineering.jpg" alt="Strain Engineering" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3><a href="projects/strain-engineering.html">Strain Engineering</a></h3>
+          <p>Strain is a well-known tuning knob, with epitaxial strain having profound effects on material properties. I am interested in engineering strain gradients and complex strain structures for disorder-free control of material properties — which entails careful structural characterization.</p>
+          <div class="card-tags">
+            <span>Strain Engineering</span>
+            <span>Thin Films</span>
+            <span>EXAFS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="card-img-wrap">
+          <img src="images/projects/superconductivity.jpg" alt="Superconductivity" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3><a href="projects/superconductivity.html">Superconductivity</a></h3>
+          <p>Studying unconventional superconductors through RIXS and Higgs spectroscopy, using THz FEL sources to directly couple to superconducting amplitude modes. Also investigating nickelate metal-insulator transitions and collective mode dynamics.</p>
+          <div class="card-tags">
+            <span>Superconductivity</span>
+            <span>Higgs Spectroscopy</span>
+            <span>THz FEL</span>
+            <span>Nickelates</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-3">
+        <div class="card-img-wrap">
+          <img src="images/projects/vdw-magnets.jpg" alt="Van der Waals Magnets" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3><a href="projects/vdw-magnets.html">Frustrated &amp; 2D Magnets</a></h3>
+          <p>X-ray spectroscopy of layered magnetic materials including CuCrP₂S₆ and AgCrP₂S₆, as well as THz pump–THz probe, THz-TDS, and THz pump–optical probe studies of geometrically frustrated K₂IrCl₆ in magnetic fields to investigate geometric frustration and optical control of magnetic orders.</p>
+          <div class="card-tags">
+            <span>2D Magnets</span>
+            <span>Frustrated Magnets</span>
+            <span>THz Spectroscopy</span>
+            <span>XMCD</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SYNCHROTRON MAP (Leaflet.js)
+     ════════════════════════════════════════════════════════════ -->
+<section id="facilities" class="map-section">
+  <div class="container">
+    <div class="section-label reveal">Global Reach</div>
+    <div class="section-title reveal">Synchrotron &amp; Facility Experience</div>
+    <div class="section-subtitle reveal">Facilities I've worked at.</div>
+
+    <div id="facility-map" class="reveal"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PUBLICATIONS
+     ════════════════════════════════════════════════════════════ -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label reveal">Output</div>
+    <div class="section-title reveal">Publications</div>
+    <div class="section-subtitle reveal">Peer-reviewed &amp; Conference Proceedings</div>
+
+    <div class="card-list">
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/publications/mnte-ahe-2026.jpg" alt="MnTe AHE" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Conductivity scaling of the anomalous Hall effect in the altermagnetic semiconductor α-MnTe</h3>
+          <p>Sara Bey, Shelby S. Fields, Nicholas G. Combs, … <strong>Liam Schmidt</strong>, … Badih A. Assaf</p>
+          <div class="card-meta"><em>arXiv preprint</em> arXiv:2603.00242 · Feb 2026</div>
+          <div class="card-links">
+            <a href="https://arxiv.org/pdf/2603.00242" target="_blank" rel="noopener">PDF</a>
+            <a href="https://arxiv.org/abs/2603.00242" target="_blank" rel="noopener">arXiv</a>
+          </div>
+          <div class="card-tags">
+            <span>Altermagnetism</span>
+            <span>MnTe</span>
+            <span>AHE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/publications/tr-rixs-kitaev-2025.jpg" alt="tr-RIXS Kitaev" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Ultrafast renormalization of the magnetic continuum in the proximal Kitaev quantum spin liquid H₃LiIr₂O₆ by tr-RIXS</h3>
+          <p>Jungho Kim, Tae-Kyu Choi, Edward Mercer, <strong>Liam T. Schmidt</strong>, … Alberto De La Torre</p>
+          <div class="card-meta"><em>Optical Materials Express</em>, 15(7), 1395–1406 · Jun 2025</div>
+          <div class="card-links">
+            <a href="https://opg.optica.org/ome/abstract.cfm?uri=ome-15-7-1395" target="_blank" rel="noopener">HTML</a>
+          </div>
+          <div class="card-tags">
+            <span>RIXS</span>
+            <span>Kitaev</span>
+            <span>Quantum Spin Liquid</span>
+            <span>Ultrafast</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/publications/asee-dice-2026.jpg" alt="ASEE Dice" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Design of a Physical Electronic Dice System for Pseudorandom Number Generation</h3>
+          <p>Dillon O'Malley, Amani Murray-Lompo, Dorothy Milam, <strong>Liam Schmidt</strong>, Don Heiman, Haridas Kumarakuru</p>
+          <div class="card-meta"><em>Proc. ASEE Annual Conference</em>, North Carolina · Jun 2026</div>
+          <div class="card-tags">
+            <span>Teaching</span>
+            <span>Electronics</span>
+            <span>ASEE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/publications/asee-lights-out-2026.jpg" alt="ASEE Lights Out" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Building an Arduino-Based 'Lights Out' Logic Puzzle: Integrating Digital Logic and Arcade-Inspired Interaction</h3>
+          <p>Isabella Hsia, Ryan Eggleston, <strong>Liam Schmidt</strong>, Don Heiman, Haridas Kumarakuru</p>
+          <div class="card-meta"><em>Proc. ASEE Annual Conference</em>, North Carolina · Jun 2026</div>
+          <div class="card-tags">
+            <span>Teaching</span>
+            <span>Electronics</span>
+            <span>ASEE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/publications/asee-lock-2026.jpg" alt="ASEE Lock" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>A Modular Electronic Locking System Utilizing Hexadecimal Input and Logic-Based Verification</h3>
+          <p>Victor Li, Ryan Slezak, <strong>Liam Schmidt</strong>, Don Heiman, Haridas Kumarakuru</p>
+          <div class="card-meta"><em>Proc. ASEE Annual Conference</em>, North Carolina · Jun 2026</div>
+          <div class="card-tags">
+            <span>Teaching</span>
+            <span>Electronics</span>
+            <span>ASEE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     TALKS & PRESENTATIONS
+     ════════════════════════════════════════════════════════════ -->
+<section id="talks">
+  <div class="container">
+    <div class="section-label reveal">Dissemination</div>
+    <div class="section-title reveal">Talks &amp; Presentations</div>
+    <div class="section-subtitle reveal">Invited talks, contributed presentations, and posters at international conferences.</div>
+
+    <div class="card-list">
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/mnte-aps-2025.jpg" alt="MnTe APS" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Strain-tunable altermagnetic α-MnTe thin films</h3>
+          <p><strong>Liam Schmidt</strong>, Sara Bey, Alberto de la Torre Durran, Badih Assaf</p>
+          <div class="card-meta">APS March Meeting 2025 · Anaheim, CA</div>
+          <div class="card-tags"><span>Altermagnetism</span><span>MnTe</span><span>RIXS</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/nu-magnetics-talk-2025.jpg" alt="NU Magnetics Talk" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>RIXS Studies of Cr-Based Magnets</h3>
+          <p><strong>Liam T. Schmidt</strong></p>
+          <div class="card-meta">NU Cross-College Magnetics Center Workshop · Invited Talk · Oct 2025</div>
+          <div class="card-tags"><span>RIXS</span><span>Chromium Magnets</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/alfe2b2-aps-2025.jpg" alt="AlFe2B2 APS" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Spectroscopic Investigation of Earth Abundant Magnetocaloric AlFe₂B₂ Single Crystals</h3>
+          <p>David Andersen, Edward Mercer, <strong>Liam Schmidt</strong>, … Alberto de la Torre Durran</p>
+          <div class="card-meta">APS March Meeting 2025 · Anaheim, CA</div>
+          <div class="card-tags"><span>Magnetocaloric</span><span>XMCD</span><span>ARPES</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/nickelate-aps-2025.jpg" alt="Nickelate APS" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Spectroscopy-guided simulations of the metal-insulator transition in RENiO₃</h3>
+          <p>Edward Mercer, Carlos Galdino, <strong>Liam Schmidt</strong>, … Alberto de la Torre Durran</p>
+          <div class="card-meta">APS March Meeting 2025 · Anaheim, CA</div>
+          <div class="card-tags"><span>Nickelates</span><span>RIXS</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/nu-magnetics-poster-2025.jpg" alt="NU Magnetics Poster" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Chiral Excitations and Dark Excitons in Altermagnetic α-MnTe</h3>
+          <p><strong>Liam T. Schmidt</strong>, Edward Mercer, Rikkie Joris, … Alberto de la Torre</p>
+          <div class="card-meta">NU Cross-College Magnetics Center Workshop · Poster · May 2025</div>
+          <div class="card-tags"><span>Altermagnetism</span><span>MnTe</span><span>RIXS</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/events/mnte-smt-2025.jpg" alt="MnTe SMT" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Resonant x-ray studies of altermagnetic α-MnTe thin films</h3>
+          <p><strong>Liam T. Schmidt</strong>, Edward Mercer, Rikkie Joris, … Alberto de la Torre</p>
+          <div class="card-meta">SMT 2025 · Mar 2025</div>
+          <div class="card-tags"><span>Altermagnetism</span><span>MnTe</span><span>RIXS</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>Ultrafast engineering of the magnetic Hamiltonian in frustrated magnets</h3>
+          <p>Alberto de la Torre, Edward Mercer, <strong>Liam Schmidt</strong>, … Jan-Christoph Deinert</p>
+          <div class="card-meta">SMT 2025 · Mar 2025</div>
+          <div class="card-tags"><span>Ultrafast</span><span>Frustrated Magnets</span><span>THz</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>X-ray spectroscopy study of the quantum spin liquid candidate, TbInO₃</h3>
+          <p>Edward Mercer, Johanna Nordlander, … <strong>Liam T. Schmidt</strong>, … Alberto de la Torre</p>
+          <div class="card-meta">SMT 2025 · Mar 2025</div>
+          <div class="card-tags"><span>Quantum Spin Liquid</span><span>RIXS</span><span>XMCD</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>Probing Magnetic Anisotropy in 2D Magnets with X-ray Spectroscopy</h3>
+          <p><strong>Liam T. Schmidt</strong></p>
+          <div class="card-meta">IEEE ATC-ATG 2024 · Oct 2024</div>
+          <div class="card-tags"><span>2D Magnets</span><span>X-ray Spectroscopy</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-body">
+          <h3>X-ray Spectroscopies of 2D Magnets</h3>
+          <p><strong>Liam T. Schmidt</strong></p>
+          <div class="card-meta">Northeast Quantum Forum 2024 · Poster · Oct 2024</div>
+          <div class="card-tags"><span>2D Magnets</span><span>X-ray Spectroscopy</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     TEACHING
+     ════════════════════════════════════════════════════════════ -->
+<section id="teaching">
+  <div class="container">
+    <div class="section-label reveal">Mentorship</div>
+    <div class="section-title reveal">Teaching</div>
+    <div class="section-subtitle reveal">Northeastern University</div>
+
+    <div class="card-grid">
+
+      <div class="card reveal">
+        <div class="card-img-wrap">
+          <img src="images/teaching/electronics-lab.jpg" alt="Electronics Lab" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Electronics Laboratory</h3>
+          <p>Mentored 12 undergraduate students through hands-on electronics projects, leading to co-authored publications at ASEE and FYEE 2026.</p>
+          <div class="card-meta">Fall 2025</div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="card-img-wrap">
+          <img src="images/teaching/em2.jpg" alt="E&M II" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Electricity &amp; Magnetism II</h3>
+          <p>Problem sets and office hours for upper-division E&amp;M course covering Maxwell's equations, radiation, and waveguides.</p>
+          <div class="card-meta">Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="card-img-wrap">
+          <img src="images/teaching/stat-thermo.jpg" alt="Statistical Thermodynamics" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Statistical Thermodynamics</h3>
+          <p>Problem-solving sessions and office hours covering classical and quantum statistical mechanics, partition functions, and phase transitions.</p>
+          <div class="card-meta">Spring 2025</div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-3">
+        <div class="card-img-wrap">
+          <img src="images/teaching/physics-engineers.jpg" alt="Physics for Engineers" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Physics for Engineers I &amp; II</h3>
+          <p>Recitation sections and laboratory sessions covering mechanics, waves, thermodynamics, electricity, and magnetism.</p>
+          <div class="card-meta">2023 — 2024</div>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-4">
+        <div class="card-img-wrap">
+          <img src="images/teaching/physics-life-sci.jpg" alt="Physics for Life Sciences" class="card-img">
+        </div>
+        <div class="card-body">
+          <h3>Physics for Life Sciences I &amp; II</h3>
+          <p>Interactive learning sessions for pre-med and life sciences students covering mechanics, thermodynamics, electricity, and optics.</p>
+          <div class="card-meta">2023 — 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="mailto:schmidt.lia@northeastern.edu">Email</a>
+      <a href="https://github.com/liamlts" target="_blank">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=bRe3ABIAAAAJ" target="_blank">Scholar</a>
+      <a href="https://condensedmattercorner.wordpress.com/" target="_blank">Blog</a>
+      <a href="uploads/resume.pdf">Resume</a>
+    </div>
+    <p>&copy; 2025 Liam T. Schmidt · Hand-built with HTML, CSS &amp; JS</p>
+  </div>
+</footer>
+
+<!-- Live clock -->
+<div class="live-clock" id="live-clock"></div>
+
+<!-- ════════════════════════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════════════════════════ -->
+<script>
+/* ── Typing effect ───────────────────────────────────────── */
+(function() {
+  const roles = [
+    'PhD Candidate in Condensed Matter',
+    'Quantum Materials Researcher'
+  ];
+  let roleIdx = 0, charIdx = 0, deleting = false;
+  const el = document.getElementById('typed-role');
+  function tick() {
+    const current = roles[roleIdx];
+    if (!deleting) {
+      el.textContent = current.substring(0, charIdx + 1);
+      charIdx++;
+      if (charIdx === current.length) {
+        setTimeout(function() { deleting = true; tick(); }, 2200);
+        return;
+      }
+      setTimeout(tick, 55);
+    } else {
+      el.textContent = current.substring(0, charIdx - 1);
+      charIdx--;
+      if (charIdx === 0) {
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        setTimeout(tick, 400);
+        return;
+      }
+      setTimeout(tick, 30);
+    }
+  }
+  tick();
+})();
+
+/* ── Scroll reveal ───────────────────────────────────────── */
+(function() {
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+
+/* ── Navbar scroll state ─────────────────────────────────── */
+(function() {
+  var nb = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    nb.classList.toggle('scrolled', window.scrollY > 50);
+  });
+})();
+
+/* ── Active nav highlight ────────────────────────────────── */
+(function() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+  function updateActive() {
+    var scrollY = window.scrollY + 100;
+    navLinks.forEach(function(l) { l.classList.remove('active'); });
+    sections.forEach(function(section) {
+      var top = section.offsetTop;
+      var height = section.offsetHeight;
+      var id = section.getAttribute('id');
+      if (scrollY >= top && scrollY < top + height) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href') === '#' + id) link.classList.add('active');
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActive);
+  updateActive();
+})();
+
+/* ── Scroll progress bar ─────────────────────────────────── */
+(function() {
+  var bar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  });
+})();
+
+/* ── Cursor glow ─────────────────────────────────────────── */
+(function() {
+  var glow = document.getElementById('cursor-glow');
+  if (window.innerWidth > 768) {
+    document.addEventListener('mousemove', function(e) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+  }
+})();
+
+/* ── Live clock ──────────────────────────────────────────── */
+(function() {
+  var el = document.getElementById('live-clock');
+  function update() {
+    var now = new Date();
+    var opts = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'America/New_York' };
+    el.textContent = 'Boston · ' + now.toLocaleTimeString('en-US', opts) + ' ET';
+  }
+  update();
+  setInterval(update, 1000);
+})();
+
+/* ── Leaflet Map ─────────────────────────────────────────── */
+(function() {
+  var map = L.map('facility-map', {
+    center: [40, -20],
+    zoom: 3,
+    minZoom: 2,
+    maxZoom: 8,
+    scrollWheelZoom: false,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  var facilities = [
+    { name: 'Northeastern University', loc: 'Boston, MA', lat: 42.3398, lng: -71.0892, desc: 'Home — DeLTA Lab, Quantum Matter and Sensing Institute', isHome: true },
+    { name: 'NSLS-II', loc: 'Brookhaven National Lab, NY', lat: 40.8706, lng: -72.8686, desc: '2-ID, SIX · RIXS on altermagnets, vdW magnets, nickelates, frustrated magnets' },
+    { name: 'Advanced Photon Source', loc: 'Argonne National Lab, IL', lat: 41.7082, lng: -87.9771, desc: 'Sector 27 · tr-RIXS on Kitaev spin liquids' },
+    { name: 'Advanced Light Source', loc: 'LBNL, Berkeley, CA', lat: 37.8755, lng: -122.2477, desc: 'Beamline 4.0.2 · XMCD on altermagnetic thin films' },
+    { name: 'CHESS', loc: 'Cornell University, NY', lat: 42.4534, lng: -76.4735, desc: 'PIPOXS, QM2 · XRD on quantum materials' },
+    { name: 'Canadian Light Source', loc: 'Saskatoon, Canada', lat: 52.1332, lng: -106.6319, desc: 'BXDS · X-ray diffraction' },
+    { name: 'ESRF', loc: 'Grenoble, France', lat: 45.2088, lng: 5.6946, desc: 'ID32 · High-resolution RIXS on altermagnets and vdW magnets' },
+    { name: 'Diamond Light Source', loc: 'Oxfordshire, UK', lat: 51.5733, lng: -1.3175, desc: 'I21, I10 · RIXS and XMCD on MnTe, CrSb, Cr-based vdW magnets' },
+    { name: 'SOLEIL', loc: 'Saint-Aubin, France', lat: 48.7114, lng: 2.1489, desc: 'DEIMOS, SEXTANTS · XMCD and RIXS on altermagnetic and vdW systems' },
+    { name: 'MAX IV', loc: 'Lund, Sweden', lat: 55.7293, lng: 13.2519, desc: 'VERITAS · Soft X-ray RIXS on magnetic thin films' },
+    { name: 'Elettra / TeraFERMI', loc: 'Trieste, Italy', lat: 45.6543, lng: 13.8484, desc: 'TeraFERMI FEL · Time-resolved THz absorption spectroscopy' },
+    { name: 'TELBE', loc: 'HZDR, Dresden, Germany', lat: 51.0643, lng: 13.7597, desc: 'THz pump-probe and Higgs spectroscopy on superconductors' }
+  ];
+
+  function makePulseIcon(isHome) {
+    var size = isHome ? 14 : 10;
+    var color = isHome ? '#ffffff' : '#22d3ee';
+    var glow = isHome ? 'rgba(255,255,255,0.4)' : 'rgba(34,211,238,0.4)';
+    return L.divIcon({
+      className: '',
+      iconSize: [size * 3, size * 3],
+      iconAnchor: [size * 1.5, size * 1.5],
+      html: '<div style="position:relative;width:' + (size*3) + 'px;height:' + (size*3) + 'px;display:flex;align-items:center;justify-content:center;">' +
+            '<div style="width:' + (size*3) + 'px;height:' + (size*3) + 'px;border-radius:50%;background:' + glow + ';position:absolute;animation:pulse-ring 2s infinite;"></div>' +
+            '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';position:relative;z-index:1;box-shadow:0 0 8px ' + glow + ';"></div></div>'
+    });
+  }
+
+  facilities.forEach(function(f) {
+    var marker = L.marker([f.lat, f.lng], { icon: makePulseIcon(f.isHome) }).addTo(map);
+    marker.bindPopup(
+      '<div class="facility-popup-name">' + f.name + '</div>' +
+      '<div class="facility-popup-loc">' + f.loc + '</div>' +
+      '<div class="facility-popup-desc">' + f.desc + '</div>'
+    );
+  });
+
+  // Draw great-circle-ish lines from home to each facility
+  var home = [42.3398, -71.0892];
+  facilities.forEach(function(f) {
+    if (f.isHome) return;
+    L.polyline([home, [f.lat, f.lng]], {
+      color: '#22d3ee', weight: 1, opacity: 0.15, dashArray: '4 6'
+    }).addTo(map);
+  });
+})();
+
+/* ── Skill bar animation (for experience page if needed) ─── */
+(function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-bar-fill').forEach(function(bar) {
+          bar.style.width = bar.dataset.width;
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skills-grid').forEach(function(el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>

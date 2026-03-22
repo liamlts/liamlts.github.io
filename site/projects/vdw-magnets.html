@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frustrated &amp; 2D Magnets — Liam T. Schmidt</title>
+  <meta name="description" content="X-ray and THz spectroscopy of layered and frustrated magnetic materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#research">Research</a>
+    <a href="../index.html#facilities">Facilities</a>
+    <a href="../index.html#publications">Publications</a>
+    <a href="../index.html#talks">Talks</a>
+    <a href="../index.html#teaching">Teaching</a>
+    <a href="../experience.html">CV</a>
+  </div>
+</nav>
+
+<section class="detail-page">
+  <div class="container">
+    <a href="../index.html#research" class="back-link">← Research</a>
+    <h1 class="reveal">Frustrated &amp; 2D Magnets</h1>
+    <div class="card-tags reveal" style="margin-bottom: 2rem;">
+      <span>2D Magnets</span>
+      <span>Frustrated Magnets</span>
+      <span>THz Spectroscopy</span>
+      <span>XMCD</span>
+      <span>RIXS</span>
+    </div>
+
+    <img src="../images/projects/vdw-magnets.jpg" alt="Frustrated and 2D Magnets research" class="detail-featured-img reveal">
+
+    <div class="detail-body reveal">
+      <p>Van der Waals magnets offer a platform for exploring magnetism in the two-dimensional limit, with applications in spintronics and quantum information. I investigate the magnetic anisotropy, exchange interactions, and electronic structure of layered magnetic compounds — including CuCrP₂S₆ and AgCrP₂S₆ — using XMCD and RIXS at the Cr L-edge.</p>
+      <p>Beyond layered systems, I study geometrically frustrated magnets such as K₂IrCl₆ using THz pump–THz probe, THz-TDS, and THz pump–optical probe techniques in magnetic fields. These experiments probe the interplay of geometric frustration, spin-orbit coupling, and optical control of magnetic orders.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Liam T. Schmidt · Hand-built with HTML, CSS &amp; JS</p>
+  </div>
+</footer>
+
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(e){o.observe(e)})})();
+(function(){var n=document.getElementById('navbar');window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>50)})})();
+(function(){var g=document.getElementById('cursor-glow');if(window.innerWidth>768)document.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'})})();
+</script>
+
+</body>
+</html>
