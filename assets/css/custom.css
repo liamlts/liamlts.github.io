@@ -105,7 +105,7 @@ header,
 .hb-header,
 [class*="header"],
 nav {
-  background-color: #0a0a0a !important;
+  background-color: #121212 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
@@ -191,4 +191,12 @@ ul.list-disc li {
 /* Binghamton - second education entry */
 .hb-section:first-child li:nth-child(2)::before {
   background-image: url('/images/binghamton.jpg');
+}
+
+/* Hide featured image on individual article pages (keep only in cards) */
+article.article-page .featured-image,
+.article-container .featured-image,
+main article > .row > .col-12 > figure:first-child,
+.article-header .featured-image-wrapper {
+  display: none !important;
 }

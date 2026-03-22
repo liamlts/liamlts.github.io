@@ -45,13 +45,13 @@ hugoblox:
     colors_dark: {}
     # Optional: Semantic surface color overrides
     surfaces:
-      background: "#0a0a0a"
+      background: "#121212"
       foreground: "#fafafa"
       header:
-        background: "#0a0a0a"
+        background: "#121212"
         foreground: "#fafafa"
       footer:
-        background: "#0a0a0a"
+        background: "#121212"
         foreground: "#a1a1aa"
 
   # ────────────────────────────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ hugoblox:
     # Menu alignment
     align: center                       # left | center | right
     # Feature toggles
-    search: true
+    search: false
     theme_toggle: true
     theme_picker: false
     language_switcher: false
