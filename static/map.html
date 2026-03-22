@@ -4,10 +4,8 @@
 <meta charset="utf-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: transparent; overflow: hidden; }
-  #map-wrap { width: 100%; height: 100vh; position: relative; }
-  #map-wrap img { width: 100%; height: 100%; object-fit: contain; }
-  #map-wrap svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  body { background: #161616; overflow: hidden; }
+  #map-wrap { width: 100%; height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
   #tooltip {
     display: none; position: absolute;
     background: rgba(22,22,22,0.97); border: 1px solid #22d3ee;
@@ -18,57 +16,96 @@
   }
   .dot { cursor: pointer; transition: all 0.2s ease; }
   .dot:hover { filter: drop-shadow(0 0 10px #22d3ee); }
+  .land { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.12); stroke-width: 0.3; }
 </style>
 </head>
 <body>
 <div id="map-wrap">
-<img src="/images/worldmap.png" 
-     style="filter: brightness(0.2) saturate(0.2) sepia(0.1) hue-rotate(160deg);" alt="World map"/>
-<svg viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:95%;max-height:90vh;">
   <defs>
     <radialGradient id="g" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  
-  <g stroke="#22d3ee" stroke-width="0.6" stroke-opacity="0.12" stroke-dasharray="6,4" fill="none">
-    <path d="M295,235 Q400,180 530,215"/>
-    <path d="M295,235 Q390,170 505,198"/>
-    <path d="M295,235 Q400,175 520,207"/>
-    <path d="M295,235 Q410,160 540,185"/>
-    <path d="M295,235 Q420,185 555,218"/>
-    <path d="M295,235 Q420,170 545,200"/>
-    <line x1="295" y1="235" x2="265" y2="232"/>
-    <line x1="295" y1="235" x2="155" y2="232"/>
-    <line x1="295" y1="235" x2="285" y2="228"/>
-    <line x1="295" y1="235" x2="230" y2="178"/>
+
+  <!-- Simplified continent outlines -->
+  <!-- North America -->
+  <path class="land" d="M60,80 L90,55 L130,50 L170,45 L200,50 L230,65 L245,85 L250,110 L245,135 L235,155 L240,175 L235,195 L225,210 L210,220 L195,210 L185,190 L175,200 L165,210 L155,200 L150,185 L140,170 L125,160 L115,145 L100,130 L85,115 L75,100 Z"/>
+  <!-- Greenland -->
+  <path class="land" d="M260,30 L280,25 L300,30 L305,50 L295,65 L280,70 L265,60 L260,45 Z"/>
+  <!-- South America -->
+  <path class="land" d="M195,230 L210,225 L225,235 L235,255 L240,280 L235,310 L225,340 L210,365 L195,380 L185,375 L180,355 L175,330 L170,310 L172,285 L178,260 L185,240 Z"/>
+  <!-- Europe -->
+  <path class="land" d="M440,70 L460,60 L480,55 L510,60 L530,70 L545,85 L540,100 L535,115 L525,125 L510,130 L500,125 L490,135 L475,140 L460,135 L450,125 L445,110 L440,95 Z"/>
+  <!-- UK/Ireland -->
+  <path class="land" d="M430,75 L435,65 L442,72 L440,82 L435,85 Z"/>
+  <path class="land" d="M425,78 L428,73 L432,78 L429,82 Z"/>
+  <!-- Scandinavia -->
+  <path class="land" d="M475,30 L485,22 L495,28 L500,45 L495,60 L488,68 L480,62 L475,48 Z"/>
+  <!-- Italy -->
+  <path class="land" d="M480,120 L485,130 L490,145 L487,150 L482,142 L478,130 Z"/>
+  <!-- Africa -->
+  <path class="land" d="M445,145 L470,140 L500,145 L520,155 L535,175 L540,200 L535,230 L525,260 L510,280 L495,290 L480,285 L465,275 L455,255 L450,230 L445,205 L440,180 L442,160 Z"/>
+  <!-- Asia -->
+  <path class="land" d="M545,85 L580,75 L620,65 L660,60 L700,55 L740,60 L770,70 L790,85 L800,105 L795,130 L785,150 L770,160 L750,155 L730,145 L710,140 L690,145 L670,150 L650,145 L630,140 L610,135 L590,125 L570,115 L555,105 L545,95 Z"/>
+  <!-- India -->
+  <path class="land" d="M650,150 L665,155 L675,175 L670,200 L660,210 L650,205 L645,185 L643,165 Z"/>
+  <!-- Southeast Asia -->
+  <path class="land" d="M720,155 L735,150 L745,160 L740,175 L730,180 L720,170 Z"/>
+  <!-- Japan -->
+  <path class="land" d="M800,90 L805,80 L810,85 L808,100 L803,105 Z"/>
+  <!-- Australia -->
+  <path class="land" d="M760,280 L790,270 L820,275 L840,290 L845,310 L835,330 L815,340 L790,335 L770,320 L760,300 Z"/>
+  <!-- Indonesia -->
+  <path class="land" d="M740,210 L755,208 L770,212 L780,215 L775,222 L760,220 L745,218 Z"/>
+
+  <!-- Connection arcs from Boston -->
+  <g stroke="#22d3ee" stroke-width="0.6" stroke-opacity="0.15" fill="none">
+    <path d="M230,95 Q350,40 490,110"/>
+    <path d="M230,95 Q340,30 435,75"/>
+    <path d="M230,95 Q350,45 478,105"/>
+    <path d="M230,95 Q360,20 487,40"/>
+    <path d="M230,95 Q370,50 485,140"/>
+    <path d="M230,95 Q380,40 520,90"/>
+    <line x1="230" y1="95" x2="200" y2="92"/>
+    <line x1="230" y1="95" x2="155" y2="100"/>
+    <line x1="230" y1="95" x2="220" y2="88"/>
+    <line x1="230" y1="95" x2="175" y2="62"/>
   </g>
 
   <!-- Home: Boston -->
-  <circle cx="295" cy="235" r="16" fill="url(#g)"/><circle cx="295" cy="235" r="5" fill="#fff" class="dot" data-f="home"/>
-  <!-- NSLS-II -->
-  <circle cx="288" cy="240" r="12" fill="url(#g)"/><circle cx="288" cy="240" r="4" fill="#22d3ee" class="dot" data-f="nsls2"/>
-  <!-- APS -->
-  <circle cx="253" cy="232" r="12" fill="url(#g)"/><circle cx="253" cy="232" r="4" fill="#22d3ee" class="dot" data-f="aps"/>
-  <!-- ALS -->
-  <circle cx="148" cy="243" r="12" fill="url(#g)"/><circle cx="148" cy="243" r="4" fill="#22d3ee" class="dot" data-f="als"/>
-  <!-- CHESS -->
-  <circle cx="283" cy="230" r="12" fill="url(#g)"/><circle cx="283" cy="230" r="4" fill="#22d3ee" class="dot" data-f="chess"/>
-  <!-- CLS -->
-  <circle cx="222" cy="178" r="12" fill="url(#g)"/><circle cx="222" cy="178" r="4" fill="#22d3ee" class="dot" data-f="cls"/>
-  <!-- ESRF -->
-  <circle cx="531" cy="218" r="12" fill="url(#g)"/><circle cx="531" cy="218" r="4" fill="#22d3ee" class="dot" data-f="esrf"/>
-  <!-- Diamond -->
-  <circle cx="507" cy="200" r="12" fill="url(#g)"/><circle cx="507" cy="200" r="4" fill="#22d3ee" class="dot" data-f="diamond"/>
-  <!-- SOLEIL -->
-  <circle cx="521" cy="210" r="12" fill="url(#g)"/><circle cx="521" cy="210" r="4" fill="#22d3ee" class="dot" data-f="soleil"/>
-  <!-- MAX IV -->
-  <circle cx="541" cy="188" r="12" fill="url(#g)"/><circle cx="541" cy="188" r="4" fill="#22d3ee" class="dot" data-f="maxiv"/>
-  <!-- Elettra -->
-  <circle cx="548" cy="222" r="12" fill="url(#g)"/><circle cx="548" cy="222" r="4" fill="#22d3ee" class="dot" data-f="elettra"/>
-  <!-- TELBE -->
-  <circle cx="543" cy="204" r="12" fill="url(#g)"/><circle cx="543" cy="204" r="4" fill="#22d3ee" class="dot" data-f="telbe"/>
+  <circle cx="230" cy="95" r="14" fill="url(#g)"/><circle cx="230" cy="95" r="5" fill="#fff" class="dot" data-f="home"/>
+  <!-- NSLS-II (Long Island) -->
+  <circle cx="225" cy="100" r="10" fill="url(#g)"/><circle cx="225" cy="100" r="4" fill="#22d3ee" class="dot" data-f="nsls2"/>
+  <!-- APS (Chicago) -->
+  <circle cx="200" cy="92" r="10" fill="url(#g)"/><circle cx="200" cy="92" r="4" fill="#22d3ee" class="dot" data-f="aps"/>
+  <!-- ALS (Bay Area) -->
+  <circle cx="115" cy="102" r="10" fill="url(#g)"/><circle cx="115" cy="102" r="4" fill="#22d3ee" class="dot" data-f="als"/>
+  <!-- CHESS (Ithaca) -->
+  <circle cx="222" cy="90" r="10" fill="url(#g)"/><circle cx="222" cy="90" r="4" fill="#22d3ee" class="dot" data-f="chess"/>
+  <!-- CLS (Saskatchewan) -->
+  <circle cx="175" cy="62" r="10" fill="url(#g)"/><circle cx="175" cy="62" r="4" fill="#22d3ee" class="dot" data-f="cls"/>
+  <!-- ESRF (Grenoble) -->
+  <circle cx="490" cy="110" r="10" fill="url(#g)"/><circle cx="490" cy="110" r="4" fill="#22d3ee" class="dot" data-f="esrf"/>
+  <!-- Diamond (UK) -->
+  <circle cx="438" cy="78" r="10" fill="url(#g)"/><circle cx="438" cy="78" r="4" fill="#22d3ee" class="dot" data-f="diamond"/>
+  <!-- SOLEIL (Paris) -->
+  <circle cx="478" cy="100" r="10" fill="url(#g)"/><circle cx="478" cy="100" r="4" fill="#22d3ee" class="dot" data-f="soleil"/>
+  <!-- MAX IV (Lund) -->
+  <circle cx="487" cy="55" r="10" fill="url(#g)"/><circle cx="487" cy="55" r="4" fill="#22d3ee" class="dot" data-f="maxiv"/>
+  <!-- Elettra (Trieste) -->
+  <circle cx="500" cy="118" r="10" fill="url(#g)"/><circle cx="500" cy="118" r="4" fill="#22d3ee" class="dot" data-f="elettra"/>
+  <!-- TELBE (Dresden) -->
+  <circle cx="505" cy="85" r="10" fill="url(#g)"/><circle cx="505" cy="85" r="4" fill="#22d3ee" class="dot" data-f="telbe"/>
+
+  <!-- Labels for continents (very subtle) -->
+  <text x="160" y="145" fill="rgba(255,255,255,0.06)" font-size="14" font-family="system-ui">North America</text>
+  <text x="185" y="310" fill="rgba(255,255,255,0.06)" font-size="11" font-family="system-ui">South America</text>
+  <text x="465" y="100" fill="rgba(255,255,255,0.06)" font-size="11" font-family="system-ui">Europe</text>
+  <text x="470" y="225" fill="rgba(255,255,255,0.06)" font-size="12" font-family="system-ui">Africa</text>
+  <text x="660" y="110" fill="rgba(255,255,255,0.06)" font-size="14" font-family="system-ui">Asia</text>
+  <text x="780" y="310" fill="rgba(255,255,255,0.06)" font-size="10" font-family="system-ui">Australia</text>
 </svg>
 <div id="tooltip"></div>
 </div>
@@ -89,12 +126,13 @@ const F = {
   telbe: ["TELBE", "HZDR, Dresden, Germany", "THz pump-probe and Higgs spectroscopy on superconductors"]
 };
 const tt = document.getElementById('tooltip');
+const wrap = document.getElementById('map-wrap');
 document.querySelectorAll('.dot').forEach(d => {
   d.addEventListener('mouseenter', function(e) {
     const f = F[this.dataset.f]; if(!f) return;
     tt.innerHTML = '<strong style="color:#22d3ee;font-size:15px;">' + f[0] + '</strong><br><span style="color:#a1a1aa;font-size:12px;">' + f[1] + '</span><br><span style="margin-top:6px;display:inline-block;line-height:1.4;">' + f[2] + '</span>';
     tt.style.display = 'block';
-    const r = document.getElementById('map-wrap').getBoundingClientRect();
+    const r = wrap.getBoundingClientRect();
     const dr = this.getBoundingClientRect();
     let l = dr.left - r.left + 18, t = dr.top - r.top - 10;
     if (l + 340 > r.width) l = l - 360;
