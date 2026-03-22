@@ -2,115 +2,116 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
+  display: Liam Schmidt
+  given: Liam
+  family: Schmidt
+  alternate: ''
+  pronunciation: ''
   pronouns: he/him
-postnominals:
-  - PhD
-  - MIEEE
+postnominals: []
 status:
-  icon: "☕️"
-role: Senior AI Research Scientist
+  icon: "⚛️"
+role: PhD Candidate in Condensed Matter Physics
 bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
+  I am a third-year PhD candidate at Northeastern University's Quantum Matter
+  and Sensing Institute, working in the DeLTA Lab under Prof. Alberto de la Torre.
+  My research focuses on quantum materials — particularly altermagnetism — using
+  advanced X-ray spectroscopies (RIXS, XMCD, EXAFS) at international synchrotron and free-electron laser
+  facilities. 
 
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: Northeastern University — DeLTA Lab
+    url: ""
+  - name: Quantum Matter and Sensing Institute — Northeastern University
+    url: ""
 
 links:
   - icon: at-symbol
-    url: mailto:alex.johnson@example.com
+    url: mailto:schmidt.lia@northeastern.edu
     label: E-mail Me
-  - icon: brands/x
-    url: https://x.com/example
   - icon: brands/github
-    url: https://github.com/example
+    url: https://github.com/liamlts
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
+    url: https://www.linkedin.com/in/liam-schmidt-321839179/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
+    url: https://scholar.google.com/citations?user=bRe3ABIAAAAJ&hl=en
   - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://orcid.org/my-orcid?orcid=0000-0001-7927-4300
 
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Altermagnetism
+  - Quantum Materials
+  - X-ray Spectroscopy (RIXS, XMCD, EXAFS)
+  - Synchrotron Science
+  - Van der Waals Magnets
+  - Magnetocaloric Materials
 
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
+  - degree: PhD in Condensed Matter Physics
+    institution: Northeastern University
+    start: 2023-09-01
     summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+      Quantum Matter and Sensing Institute, DeLTA Lab. Research on altermagnetism
+      and quantum materials using synchrotron-based spectroscopies. PI on 15+
+      experimental campaigns at ESRF, Diamond, SOLEIL, MAX IV, and NSLS-II.
+  - degree: BS in Mathematical Physics & Mathematics, Summa Cum Laude
+    institution: Binghamton University (SUNY)
+    start: 2019-09-01
+    end: 2023-05-31
+    summary: |
+      Phi Beta Kappa. Dual degrees with honors in Mathematical Physics and Mathematics.
 
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  - role: Graduate Research Assistant — DeLTA Lab
+    org: Northeastern University
+    start: 2023-09-01
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
-    button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
+      Principal Investigator managing over 15 beamtime allocations across
+      international synchrotron facilities. Research on altermagnetism in MnTe
+      and CrSb, van der Waals magnets, and magnetocaloric materials.
+  - role: Teaching Assistant — Electronics & Physics
+    org: Northeastern University
+    start: 2023-09-01
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      TA for undergraduate electronics and physics laboratory courses.
+      Grading, mentoring undergraduate researchers, and developing course materials.
 
 skills:
-  - name: Technical Skills
+  - name: Experimental Techniques
+    items:
+      - label: RIXS
+        level: 5
+      - label: XMCD
+        level: 5
+      - label: EXAFS
+        level: 5
+      - label: SHG (Second Harmonic Generation)
+        level: 4
+  - name: Computational
     items:
       - label: Python
         level: 5
       - label: Machine Learning
+        level: 4
+      - label: Data Analysis & Visualization
         level: 5
-      - label: Cloud Computing
-        level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
-        level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
-        level: 4
 
 languages:
   - name: English
     level: 5
     label: Native
   - name: Spanish
-    level: 4
-    label: Fluent
+    level: 3
+    label: Proficient
 
 awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+  - title: Luigi Morelli Research Fellowship
+    awarder: Northeastern University
+    date: "Summer 2025"
+    summary: Awarded to outstanding incoming PhD students in the College of Science.
+    icon: hero/academic-cap 
+  - title: Magna Cum Laude & Phi Beta Kappa
+    awarder: Binghamton University (SUNY)
+    date: "2023"
+    summary: Graduated with latin and departmental honors with dual degrees in Mathematical Physics and Mathematics.
+    icon: hero/academic-cap
