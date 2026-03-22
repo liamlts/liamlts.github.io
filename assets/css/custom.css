@@ -108,3 +108,13 @@ nav {
   background-color: #0a0a0a !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
+
+/* Make synchrotron map larger */
+#synchrotron-map {
+  max-width: 1200px !important;
+  min-height: 500px;
+}
+
+#synchrotron-map svg {
+  min-height: 500px;
+}
