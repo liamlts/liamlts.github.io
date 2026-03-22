@@ -1,2 +1,37 @@
 {{ $style := resources.Get "css/custom.css" | minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find education entries by institution text and add background images
+  document.querySelectorAll('p').forEach(function(p) {
+    if (p.textContent.trim() === 'Northeastern University') {
+      var card = p.closest('.group') || p.parentElement.parentElement;
+      if (card) {
+        card.style.position = 'relative';
+        card.style.overflow = 'hidden';
+        card.style.borderRadius = '0.75rem';
+        var bg = document.createElement('div');
+        bg.style.cssText = 'position:absolute;inset:0;background:url(/images/northeastern.jpg) center/cover;opacity:0.07;transition:opacity 0.5s;pointer-events:none;z-index:0;';
+        card.prepend(bg);
+        card.addEventListener('mouseenter', function(){bg.style.opacity='0.22';});
+        card.addEventListener('mouseleave', function(){bg.style.opacity='0.07';});
+        Array.from(card.children).forEach(function(c){if(c!==bg)c.style.position='relative';c.style.zIndex='1';});
+      }
+    }
+    if (p.textContent.trim() === 'Binghamton University (SUNY)') {
+      var card = p.closest('.group') || p.parentElement.parentElement;
+      if (card) {
+        card.style.position = 'relative';
+        card.style.overflow = 'hidden';
+        card.style.borderRadius = '0.75rem';
+        var bg = document.createElement('div');
+        bg.style.cssText = 'position:absolute;inset:0;background:url(/images/binghamton.jpg) center/cover;opacity:0.07;transition:opacity 0.5s;pointer-events:none;z-index:0;';
+        card.prepend(bg);
+        card.addEventListener('mouseenter', function(){bg.style.opacity='0.22';});
+        card.addEventListener('mouseleave', function(){bg.style.opacity='0.07';});
+        Array.from(card.children).forEach(function(c){if(c!==bg)c.style.position='relative';c.style.zIndex='1';});
+      }
+    }
+  });
+});
+</script>
